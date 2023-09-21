@@ -9,7 +9,7 @@ a=0
 d1={}
 
 class Quiz:
-    def startquiz(self):
+    def startquiz(self):     #Controls the quiz, takes you to the next ques
             global count, l1, l2, a, d1
             for i in j.question_data:
                 a+=1
@@ -17,7 +17,7 @@ class Quiz:
                 t=input("Answer(A) or Skip(S)?(A/S): ")
                 if t=="S":
                     l2.append("Skipped (0)")
-                    l1.append(i)
+                    l1.append(i)             #Skipped ques appended to l1
                     d1[i["text"]]=a-1
                     print()
                     continue
@@ -33,7 +33,7 @@ class Quiz:
                 print()
 
 
-    def reattempt(self):
+    def reattempt(self):     #Reattempt the ques you left earlier
          global l1, count, l2, d1
          f=input("Do you wish to reattempt the questions you Skipped?(Y/N): ")
          if f=="Y":
@@ -51,7 +51,7 @@ class Quiz:
                     else:
                             count-=1
                             l2[d1[i["text"]]]="Wrong! (-1)"
-    def checkans(self):
+    def checkans(self):   #Tells question-wise result
          global l2
          for g in l2:
               print(g)
